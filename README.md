@@ -20,11 +20,10 @@ This provides an organized and focused environment to build new components and w
     ├── hooks/
     │   ├── getUserHooks/
     │   │   # custom hooks defined here	
-	└── pages/
     │   │── Dashboard/
-    │   │   └── index.js
+    │   │      └── index.js
 	│   │── Login/
-	│		└── index.js
+	│	│	   └── index.js
 	│   │   # routing pages are defined here
     ├── routes/
     │   │   └── routes.js
@@ -41,7 +40,7 @@ This provides an organized and focused environment to build new components and w
 	│   │       ├──index.styles.js
 	│   │       └── comonentname.js
     ├── utils/
-	│     └── index.js
+	│    └── index.js
     └── themes/
         ├── ButtonTheme.js
 
