@@ -7,7 +7,6 @@ Once you build out a component, Storybook lets you create a "story" file where y
 
 This provides an organized and focused environment to build new components and work on existing ones.
 
-
 ```bash
 
 └── src/
@@ -23,7 +22,7 @@ This provides an organized and focused environment to build new components and w
     │   │── Dashboard/
     │   │      └── index.js
 	│   │── Login/
-	│	│	  └── index.js
+	│   │	  └── index.js
 	│   │   # routing pages are defined here
     ├── routes/
     │   │   └── routes.js
@@ -32,17 +31,17 @@ This provides an organized and focused environment to build new components and w
     │   │── assets/
 	│   │     └── index.js
 	│   │── componentName/
-    │   │ 		├──comonentname.stories.js
+    │   │ 	  ├──comonentname.stories.js
     │   │       ├──index.styles.js
 	│   │       └── comonentname.js
 	│   │── containers/
-	│   │ 		├──comonentname.stories.js
+	│   │ 	  ├──comonentname.stories.js
 	│   │       ├──index.styles.js
 	│   │       └── comonentname.js
     ├── utils/
 	│    └── index.js
     └── themes/
-        ├── ButtonTheme.js
+           ├── ButtonTheme.js
 
 ```
 
