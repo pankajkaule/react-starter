@@ -8,9 +8,6 @@ Once you build out a component, Storybook lets you create a "story" file where y
 This provides an organized and focused environment to build new components and work on existing ones.
 
 
-
-
-
 └── src/
     ├── constants/
     │   ├── constant/
@@ -170,3 +167,8 @@ element, which specifies the component the route should render.
 All we have done now is define our routes and their paths, and attach them to their respective components.
 	
 	 
+
+
+[click here for storybook documentation](https://storybook.js.org/docs/ember/get-started/introduction)
+
+[click here for react router v6 documentation](https://reactrouter.com/en/main)
