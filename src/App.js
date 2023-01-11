@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, Suspense, useEffect } from "react";
+import { router } from "./routes/routes";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 function App() {
+  console.log(router);
+  const [isSigned, setIsSigned] = useState(false);
+
+  const routesContainer = router.map((el) => (
+    <Route path={el.path} element={el.element} />
+  ));
+
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (isSigned) {
+      return navigate("/");
+    } else {
+      return navigate("/login");
+    }
+  }, [isSigned]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={() => <h1>Loading</h1>}>
+      <Routes>{routesContainer}</Routes>
+    </Suspense>
   );
 }
 

@@ -1,70 +1,172 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+storybook: 
+Storybook is a development environment tool that is used as a playground for UI components. It allows us, the developers, to create  components in isolation. It runs outside of the app, too, so project dependencies won’t affect the behaviour of components.
 
-In the project directory, you can run:
+Once you build out a component, Storybook lets you create a "story" file where you can then import your component and create various use case examples in an iFramed sandbox using that component.
 
-### `npm start`
+This provides an organized and focused environment to build new components and work on existing ones.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+└── src/
+    ├── constants/
+    │   ├── constant/
+    │   │   # for declaring constant.
+    ├── contexts/
+    │   ├── userContext/
+    │   │   # Define userContext here
+    ├── hooks/
+    │   ├── getUserHooks/
+    │   │   # custom hooks defined here	
+	└── pages/
+    │   │── Dashboard/
+    │   │   └── index.js
+	│   │── Login/
+	│		└── index.js
+	│   │   # routing pages are defined here
+    ├── routes/
+    │   │   └── routes.js
+	│   │   # routes  are defined here
+	├── stories/
+    │   │── assets/
+	│   │     └── index.js
+	│   │── componentName/
+    │   │ 		├──comonentname.stories.js
+    │   │       ├──index.styles.js
+	│   │       └── comonentname.js
+	│   │── containers/
+	│   │ 		├──comonentname.stories.js
+	│   │       ├──index.styles.js
+	│   │       └── comonentname.js
+    ├── utils/
+	│     └── index.js
+    └── themes/
+        ├── ButtonTheme.js
+   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. constants
+	to hold all of the constants I use within all of my components. Within that folder I simply create a file /src/constants/constant.js to store all of my components
+2. contexts
+	to define context we are using contexts folder. all user defined contexts are defined under the src/constants/*.js
+3. Hooks
+	to define hooks we are using hooks directory. all user defined hooks are defined under the src/hooks/*.js
+4. Pages
+	this folder contains all user defined component here. component are made by composing reusable component which are created in storybooks.
+4. Routes
+	user defined routes are listed here.
+	this routes help to render component as per routing path.
+5. stories
+	this contains all storybook stories.
+	1. components
+		this contains all reusable components like button, radio.
+	2. containers
+		this contain container component which are made by composing reusable component.
+6.themes
+	user defined themes for material UI component are defined here
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7.utils
+	utility functions are defined here.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Routing 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+we are using react router v6 in routing between the components.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Set Up React Router
 
-## Learn More
+After making changes in index.js with React Router, this is what you should have:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { BrowserRouter } from "react-router-dom";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
+```
 
-### Making a Progressive Web App
+Step 2 - Define routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+routes defined in routes/routes.js
 
-### Advanced Configuration
+```javascript
+import Dashboard from "../pages/Dashboard";
+import Login from "../pages/Login";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+export const router =[
+  {
+    path: "/",
+    element: <Dashboard/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
+  },
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+step 3 .add protected routes in App.js
 
-### `npm run build` fails to minify
+```javascript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+import React, { useState, Suspense, useEffect } from "react";
+import { router } from "./routes/routes";
+import { Route, Routes, useNavigate } from "react-router-dom";
+
+function App() {
+  console.log(router);
+  const [isSigned, setIsSigned] = useState(false);
+
+  const routesContainer = router.map((el) => (
+    <Route path={el.path} element={el.element} />
+  ));
+
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (isSigned) {
+      return navigate("/");
+    } else {
+      return navigate("/login");
+    }
+  }, [isSigned]);
+
+  return (
+    <Suspense fallback={() => <h1>Loading</h1>}>
+      <Routes>{routesContainer}</Routes>
+    </Suspense>
+  );
+}
+
+export default App;
+
+```
+
+We first imported the features we'll be using – Routes and Route. After that, we imported all the components we needed to attach a route to. Now let's break down the process.
+
+Routes acts as a container/parent for all the individual routes that will be created in our app.
+
+Route is used to create a single route. It takes in two attributes:
+
+path, which specifies the URL path of the desired component. You can call this pathname whatever you want. Above, you'll notice that the first pathname is a backslash (/). Any component whose pathname is a backslash will get rendered first whenever the app loads for the first time. This implies that the Home component will be the first component to get rendered.
+element, which specifies the component the route should render.
+
+All we have done now is define our routes and their paths, and attach them to their respective components.
+	
+	 
