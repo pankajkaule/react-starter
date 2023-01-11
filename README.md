@@ -8,6 +8,8 @@ Once you build out a component, Storybook lets you create a "story" file where y
 This provides an organized and focused environment to build new components and work on existing ones.
 
 
+```bash
+
 └── src/
     ├── constants/
     │   ├── constant/
@@ -42,6 +44,9 @@ This provides an organized and focused environment to build new components and w
 	│     └── index.js
     └── themes/
         ├── ButtonTheme.js
+
+```
+
    
 
 
