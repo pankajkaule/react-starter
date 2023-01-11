@@ -22,9 +22,9 @@ This provides an organized and focused environment to build new components and w
     │   │   # custom hooks defined here	
     │   │── Dashboard/
     │   │      └── index.js
-	│   │── Login/
-	│	│	   └── index.js
-	│   │   # routing pages are defined here
+│   │── Login/
+│	│	   └── index.js
+│   │   # routing pages are defined here
     ├── routes/
     │   │   └── routes.js
 	│   │   # routes  are defined here
