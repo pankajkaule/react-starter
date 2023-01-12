@@ -6,15 +6,15 @@ const MyStyledButton = styled("button")((props) => ({
   fontSize: props.fontSize,
   border: "none",
   padding: props.padding,
+  margin:"10px",
   borderRadius: "5px",
   textTransform: "uppercase",
   letterSpacing: "2px",
   // transform: `translateY(${props.translate})`,
   // transform: `translateY(-${props.translate})`,
   color: props.color,
-
   boxShadow: props.mouseShadow,
-  animation: `${myKeyframe} 1s infinite ease`
+  // animation: `${myKeyframe} 1s infinite ease`
 
 }));
 

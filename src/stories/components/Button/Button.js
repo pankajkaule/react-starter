@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import MyStyledButton from "./index.styles";
 
 function Button(props) {
+  console.log(props);
+  
   const [fontSize, setFontSize] = useState("12px");
   const [padding, setPadding] = useState("12px");
   const [boxshadow, setBoxshadow] = useState("");
@@ -48,8 +50,9 @@ function Button(props) {
       // onClick={translateBy10}
       padding={padding}
       fontSize={fontSize}
+      onClick={props.onClick}
     >
-      Button
+      {props.label}
     </MyStyledButton>
   );
 }

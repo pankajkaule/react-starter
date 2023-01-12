@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import Button from "../../stories/components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  return (
-	<div> Login</div>
-  )
-}
+  const navigate = useNavigate();
+  const login = () => {
+    localStorage.setItem("authToken", "dsfsdfdsfsdfds");
+    navigate("/cart");
+  };
 
-export default Login
+  return (
+    <div>
+      <Button onClick={login} label="Login" bgcolor={"green"} color={"white"} />
+    </div>
+  );
+};
+
+export default Login;

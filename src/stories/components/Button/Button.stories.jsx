@@ -12,5 +12,6 @@ export const Default = Template.bind({});
 Default.args = {
 bgcolor:"green",
 size:"medium",
-color:"white"
+color:"white",
+label:"button"
 };
