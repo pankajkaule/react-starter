@@ -21,26 +21,26 @@ This provides an organized and focused environment to build new components and w
     │   │   # custom hooks defined here	
     │   │── Dashboard/
     │   │      └── index.js
-	│   │── Login/
-	│   │	  └── index.js
-	│   │   # routing pages are defined here
+    │   │── Login/
+    │   │	  └── index.js
+    │   │   # routing pages are defined here
     ├── routes/
     │   │   └── routes.js
-	│   │   # routes  are defined here
-	├── stories/
+    │   │   # routes  are defined here
+    ├── stories/
     │   │── assets/
-	│   │     └── index.js
-	│   │── componentName/
+    │   │     └── index.js
+    │   │── componentName/
     │   │ 	  ├──comonentname.stories.js
-    │   │       ├──index.styles.js
-	│   │       └── comonentname.js
-	│   │── containers/
-	│   │ 	  ├──comonentname.stories.js
-	│   │       ├──index.styles.js
-	│   │       └── comonentname.js
+    │   │     ├──index.styles.js
+    │   │     └── comonentname.js
+    │   │── containers/
+    │   │ 	  ├──comonentname.stories.js
+    │   │     ├──index.styles.js
+    │   │     └── comonentname.js
     ├── utils/
-	│    └── index.js
-    └── themes/
+    │    └── index.js
+      └── themes/
            ├── ButtonTheme.js
 
 ```
