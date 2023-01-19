@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import MyStyledButton from "./index.styles";
+import {MyStyledButton} from "./index.styles";
 
-function Button(props) {
-  console.log(props);
+function Button1(props) {
+  
   
   const [fontSize, setFontSize] = useState("12px");
   const [padding, setPadding] = useState("12px");
@@ -57,9 +57,11 @@ function Button(props) {
   );
 }
 
-Button.propTypes = {
+Button1.propTypes = {
   bgcolor: PropTypes.string,
+  label:PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large"]),
+  
 };
 
-export default Button;
+export default Button1;

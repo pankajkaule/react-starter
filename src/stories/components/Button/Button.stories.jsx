@@ -1,17 +1,16 @@
-import Button from './Button'
+import Button1 from './Button'
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 
 export default{
-    title:"practice/button1",
-    component:Button
+    title:"components/button1",
+    component:Button1,
+
 }
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Button1 {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-bgcolor:"green",
-size:"medium",
-color:"white",
 label:"button"
 };

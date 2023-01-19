@@ -1,12 +1,14 @@
 import styled from "../../../theme";
 import { css, keyframes } from "@emotion/react";
+import Button from '@mui/material/Button';
 
-const MyStyledButton = styled("button")((props) => ({
+
+export const MyStyledButton = styled(Button)((props) => ({
   backgroundColor: props.bgcolor,
   fontSize: props.fontSize,
   border: "none",
   padding: props.padding,
-  margin:"10px",
+
   borderRadius: "5px",
   textTransform: "uppercase",
   letterSpacing: "2px",
@@ -24,4 +26,3 @@ const myKeyframe = keyframes`
     100% { transform: translate(1px, -2px)  rotate(-1deg);  }
 `;
 
-export default MyStyledButton;
